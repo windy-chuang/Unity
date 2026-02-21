@@ -885,7 +885,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 485684507}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b5346170b34264d169a9edf89e3e0819, type: 3}
   m_Name: 
@@ -1238,15 +1238,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1918242414108356250, guid: 88a21d39bf50f4a11b20a3a1f7375ddc, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.1
+      value: 0.11
       objectReference: {fileID: 0}
     - target: {fileID: 1918242414108356250, guid: 88a21d39bf50f4a11b20a3a1f7375ddc, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.1
+      value: 0.11
       objectReference: {fileID: 0}
     - target: {fileID: 1918242414108356250, guid: 88a21d39bf50f4a11b20a3a1f7375ddc, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.1
+      value: 0.11
       objectReference: {fileID: 0}
     - target: {fileID: 1918242414108356250, guid: 88a21d39bf50f4a11b20a3a1f7375ddc, type: 3}
       propertyPath: m_LocalPosition.x
