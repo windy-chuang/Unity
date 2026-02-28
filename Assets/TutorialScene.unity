@@ -211,13 +211,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 30022491}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: 5, y: 2, z: 2}
+  m_LocalRotation: {x: 0.63636833, y: -0.11834126, z: 0.099652596, w: 0.7557117}
+  m_LocalPosition: {x: 6.8, y: 2.16, z: 15.69}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+  m_LocalEulerAnglesHint: {x: 80.2, y: -17.8, z: 0}
 --- !u!114 &30022494
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -626,13 +626,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 485684507}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.06676521, y: -0.6403416, z: 0.05602265, w: 0.7631295}
+  m_LocalRotation: {x: 0.043577887, y: -0.86272997, z: 0.07547913, w: 0.4980973}
   m_LocalPosition: {x: 0, y: 1, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 10, y: -80, z: 0}
+  m_LocalEulerAnglesHint: {x: 10, y: -120, z: 0}
 --- !u!114 &485684511
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1753,8 +1753,6 @@ GameObject:
   - component: {fileID: 1702585257}
   - component: {fileID: 1702585256}
   - component: {fileID: 1702585255}
-  - component: {fileID: 1702585259}
-  - component: {fileID: 1702585260}
   m_Layer: 0
   m_Name: Floor
   m_TagString: Untagged
@@ -1848,42 +1846,12 @@ Transform:
   m_GameObject: {fileID: 1702585254}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 16.5588, y: -1, z: 8.93219}
+  m_LocalPosition: {x: 16.5588, y: -0.01, z: 8.93219}
   m_LocalScale: {x: 60, y: 1, z: 50}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1702585259
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1702585254}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45245bb5e6b6e45678717ef26b464eb3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::RandomMaterial
-  materials:
-  - {fileID: 2100000, guid: 87fc33459dd934f1689b107e2dcda79f, type: 2}
-  - {fileID: 2100000, guid: a4eb6406ca8a24e619c541b0136d487c, type: 2}
-  - {fileID: 2100000, guid: 6875f532d7ae14efba5e52e0ff229a79, type: 2}
-  - {fileID: 2100000, guid: 8408fced8e7fb476097387d0581384a7, type: 2}
-  objectRenderer: {fileID: 0}
---- !u!114 &1702585260
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1702585254}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f05add8ec8c2143a986d405ce30cc85a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
 --- !u!1 &1704872912
 GameObject:
   m_ObjectHideFlags: 0
@@ -1988,7 +1956,7 @@ MonoBehaviour:
     - rid: 4200312002839052359
       type: {class: MaterialRandomizer, ns: , asm: Assembly-CSharp}
       data:
-        m_Enabled: 1
+        m_Enabled: 0
         collapsed: 0
         <enabledStateCanBeSwitchedByUser>k__BackingField: 1
         materials:

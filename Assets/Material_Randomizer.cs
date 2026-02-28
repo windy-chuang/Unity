@@ -6,6 +6,7 @@ public class MaterialRandomizer : Randomizer
 {
     public Material[] materials;
 
+    [System.Obsolete]
     protected override void OnIterationStart()
     {
         var renderers = GameObject.FindObjectsOfType<Renderer>();
