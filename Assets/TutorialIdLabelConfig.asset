@@ -13,26 +13,41 @@ MonoBehaviour:
   m_Name: TutorialIdLabelConfig
   m_EditorClassIdentifier: Unity.Perception.Runtime::UnityEngine.Perception.GroundTruth.LabelManagement.IdLabelConfig
   m_LabelEntries:
-  - label: ball
+  - label: ball_2
     id: 1
     hierarchyRelation: 0
-  - label: drink_whippingcream_lucerne
+  - label: ' L_cross (1)'
     id: 2
     hierarchyRelation: 0
-  - label: Lcross (w_o light and world)
+  - label: L_cross (2)
     id: 3
     hierarchyRelation: 0
-  - label: L_cross (2)
+  - label: L_cross (3)
     id: 4
     hierarchyRelation: 0
   - label: L_cross (4)
     id: 5
     hierarchyRelation: 0
-  - label: T_cross
+  - label: Lcross (w_o light and world)
     id: 6
     hierarchyRelation: 0
-  - label: T_cross (1)
+  - label: Nao (1)
     id: 7
+    hierarchyRelation: 0
+  - label: Nao (2)
+    id: 8
+    hierarchyRelation: 0
+  - label: Nao (3)
+    id: 9
+    hierarchyRelation: 0
+  - label: Nao (4)
+    id: 10
+    hierarchyRelation: 0
+  - label: Nao
+    id: 11
+    hierarchyRelation: 0
+  - label: geometry_0
+    id: 12
     hierarchyRelation: 0
   autoAssignIds: 1
   startingLabelId: 1

@@ -13,8 +13,28 @@ MonoBehaviour:
   m_Name: TutorialSemanticSegmentationLabelConfig
   m_EditorClassIdentifier: Unity.Perception.Runtime::UnityEngine.Perception.GroundTruth.LabelManagement.SemanticSegmentationLabelConfig
   m_LabelEntries:
-  - label: L_cross (3)
-    color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
-  - label: T_cross (1)
+  - label: L_cross (1)
+    color: {r: 0, g: 0, b: 1, a: 1}
+  - label: L_cross (2)
     color: {r: 0, g: 1, b: 0, a: 1}
+  - label: L_cross (3)
+    color: {r: 1, g: 0, b: 0, a: 1}
+  - label: L_cross (4)
+    color: {r: 1, g: 1, b: 1, a: 1}
+  - label: Lcross (w_o light and world)
+    color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  - label: ball_2
+    color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  - label: Nao (1)
+    color: {r: 1, g: 0.50452924, b: 0.4393974, a: 1}
+  - label: Nao (2)
+    color: {r: 0.40456802, g: 1, b: 0.5917768, a: 1}
+  - label: Nao (3)
+    color: {r: 0.23119894, g: 1, b: 0.062428653, a: 1}
+  - label: Nao (4)
+    color: {r: 0.49833238, g: 1, b: 0.6087905, a: 1}
+  - label: Nao
+    color: {r: 0.20263016, g: 0.31140488, b: 1, a: 1}
+  - label: geometry_0
+    color: {r: 1, g: 0.66761965, b: 0.46877193, a: 1}
   skyColor: {r: 0, g: 0, b: 0, a: 1}
