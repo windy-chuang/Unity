@@ -5,7 +5,7 @@ using UnityEngine.Perception.Randomization.Samplers;
 
 /// <summary>
 /// Randomizes the position and rotation of the Perception camera each iteration.
-/// Attach this Randomizer to your PerceptionCamera's ScenarioBase.
+/// Camera is placed anywhere inside the field rectangle, mostly looking toward the center.
 /// </summary>
 [AddRandomizerMenu("Custom/Camera Randomiser")]
 public class CameraPositionRandomiser : Randomizer
@@ -14,112 +14,84 @@ public class CameraPositionRandomiser : Randomizer
     [Tooltip("If left empty, will use Camera.main")]
     public Camera targetCamera;
 
-    [Header("Position Randomization")]
-    public bool randomizePosition = true;
+    [Header("Field Bounds")]
+    [Tooltip("World-space center of the field")]
+    public Vector3 fieldCenter = new Vector3(0f, 0f, 0f);
 
-    [Tooltip("Center point around which position is randomized")]
-    public Vector3 positionCenter = new Vector3(0f, 1.5f, -3f);
+    [Tooltip("Half-extents of the allowed camera region (X = width, Z = depth)")]
+    public Vector3 fieldHalfExtents = new Vector3(4.5f, 0f, 3f);
 
-    public FloatParameter xOffset = new FloatParameter
+    [Header("Camera Height")]
+    [Tooltip("Camera height above fieldCenter.Y")]
+    public FloatParameter cameraHeight = new FloatParameter
+    {
+        value = new UniformSampler(0.3f, 2.5f)
+    };
+
+    [Header("Look-At Jitter")]
+    [Tooltip("Random offset applied to the look-at point on X and Z")]
+    public FloatParameter lookAtJitterXZ = new FloatParameter
     {
         value = new UniformSampler(-1f, 1f)
     };
 
-    public FloatParameter yOffset = new FloatParameter
+    [Tooltip("Random offset applied to the look-at point on Y")]
+    public FloatParameter lookAtJitterY = new FloatParameter
     {
-        value = new UniformSampler(-0.5f, 0.5f)
+        value = new UniformSampler(-0.3f, 0.8f)
     };
 
-    public FloatParameter zOffset = new FloatParameter
+    [Header("Outward-Facing Shots")]
+    [Tooltip("Probability [0-1] that the camera looks away from the field center")]
+    [Range(0f, 1f)]
+    public float outwardFacingProbability = 0.05f;
+
+    [Tooltip("Yaw noise when facing outward (degrees)")]
+    public FloatParameter outwardYawNoise = new FloatParameter
     {
-        value = new UniformSampler(-0.5f, 0.5f)
-    };
-
-    [Header("Rotation Randomization")]
-    public bool randomizeRotation = true;
-
-    [Tooltip("Base rotation before applying random offsets")]
-    public Vector3 rotationCenter = new Vector3(0f, 0f, 0f);
-
-    [Tooltip("Random pitch offset (X axis), in degrees")]
-    public FloatParameter pitchOffset = new FloatParameter
-    {
-        value = new UniformSampler(-15f, 15f)
-    };
-
-    [Tooltip("Random yaw offset (Y axis), in degrees")]
-    public FloatParameter yawOffset = new FloatParameter
-    {
-        value = new UniformSampler(-30f, 30f)
-    };
-
-    [Tooltip("Random roll offset (Z axis), in degrees")]
-    public FloatParameter rollOffset = new FloatParameter
-    {
-        value = new UniformSampler(-5f, 5f)
-    };
-
-    [Header("Look-At (optional)")]
-    [Tooltip("If set, camera will look at this transform after position randomization (overrides rotation randomization)")]
-    public Transform lookAtTarget;
-
-    [Tooltip("Add small random noise on top of the look-at direction")]
-    public bool addLookAtNoise = false;
-
-    public FloatParameter lookAtNoise = new FloatParameter
-    {
-        value = new UniformSampler(-3f, 3f)
+        value = new UniformSampler(-20f, 20f)
     };
 
     protected override void OnIterationStart()
     {
-        Debug.Log($"Iteration {scenario.currentIteration}");
-    // ... rest of code
-
-        // Resolve camera reference
         Camera cam = targetCamera != null ? targetCamera : Camera.main;
-
         if (cam == null)
         {
             Debug.LogWarning("[CameraRandomizer] No camera found. Assign one or ensure Camera.main exists.");
             return;
         }
 
-        // --- Position ---
-        if (randomizePosition)
+        // --- 1. Sample position uniformly inside the field rectangle ---
+        Vector3 camPos = new Vector3(
+            UnityEngine.Random.Range(fieldCenter.x - fieldHalfExtents.x, fieldCenter.x + fieldHalfExtents.x),
+            fieldCenter.y + cameraHeight.Sample(),
+            UnityEngine.Random.Range(fieldCenter.z - fieldHalfExtents.z, fieldCenter.z + fieldHalfExtents.z)
+        );
+        cam.transform.position = camPos;
+
+        // --- 2. Decide look-at behavior ---
+        bool lookOutward = UnityEngine.Random.value < outwardFacingProbability;
+
+        if (lookOutward)
         {
-            Vector3 newPos = positionCenter + new Vector3(
-                xOffset.Sample(),
-                yOffset.Sample(),
-                zOffset.Sample()
+            // Face a random direction with some yaw noise
+            float randomYaw = UnityEngine.Random.Range(0f, 360f);
+            cam.transform.rotation = Quaternion.Euler(0f, randomYaw + outwardYawNoise.Sample(), 0f);
+        }
+        else
+        {
+            // Look toward field center with jitter
+            Vector3 lookTarget = fieldCenter + new Vector3(
+                lookAtJitterXZ.Sample(),
+                lookAtJitterY.Sample(),
+                lookAtJitterXZ.Sample()
             );
-            cam.transform.position = newPos;
+
+            // Avoid LookAt singularity if camera is exactly at the look target
+            if ((lookTarget - camPos).sqrMagnitude > 0.001f)
+                cam.transform.LookAt(lookTarget);
         }
 
-        // --- Rotation ---
-        if (lookAtTarget != null)
-        {
-            // Look at target with optional noise
-            cam.transform.LookAt(lookAtTarget);
-
-            if (addLookAtNoise)
-            {
-                Vector3 noiseEuler = cam.transform.eulerAngles + new Vector3(
-                    lookAtNoise.Sample(),
-                    lookAtNoise.Sample(),
-                    0f
-                );
-                cam.transform.eulerAngles = noiseEuler;
-            }
-        }
-        else if (randomizeRotation)
-        {
-            Vector3 newRotation = rotationCenter + new Vector3(
-                pitchOffset.Sample(),
-                yawOffset.Sample(),
-                rollOffset.Sample()
-            );
-            cam.transform.rotation = Quaternion.Euler(newRotation);
-        }
+        Debug.Log($"[CameraRandomizer] Iter {scenario.currentIteration} | pos={camPos} | outward={lookOutward}");
     }
 }
