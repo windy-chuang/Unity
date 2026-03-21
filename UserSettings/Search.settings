@@ -13,9 +13,9 @@ scopes = {
 	"picker_visibility_flags.00000000" = "0"
 	"picker_item_size.00000000" = "1"
 	"picker_inspector.00000000" = "0"
-	"last_search.66F56946" = "UniversalRenderPipelineAsset"
+	"last_search.66F56946" = "adow"
 	"OpenInspectorPreview.66F56946" = "0"
-	"currentGroup.66F56946" = "all"
+	"currentGroup.66F56946" = "settings"
 }
 providers = {
 	asset = {
@@ -72,6 +72,10 @@ providers = {
 objectSelectors = {
 }
 recentSearches = [
+	"s"
+	"lighting"
+	"ambien"
+	"nt"
 	"UniversalRenderPipelineAsset"
 ]
 searchItemFavorites = [
@@ -87,4 +91,4 @@ helperWidgetCurrentArea = "all"
 disabledIndexers = ""
 minIndexVariations = 2
 findProviderIndexHelper = true
-itemIconSize = 32
+itemIconSize = 1
