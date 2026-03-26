@@ -25,5 +25,14 @@ MonoBehaviour:
   - label: robot
     id: 4
     hierarchyRelation: 0
+  - label: L-Intersection
+    id: 5
+    hierarchyRelation: 0
+  - label: X-Intersection
+    id: 6
+    hierarchyRelation: 0
+  - label: T-Intersection
+    id: 7
+    hierarchyRelation: 0
   autoAssignIds: 1
   startingLabelId: 1

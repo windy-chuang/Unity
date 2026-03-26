@@ -13,12 +13,88 @@ MonoBehaviour:
   m_Name: TutorialSemanticSegmentationLabelConfig
   m_EditorClassIdentifier: Unity.Perception.Runtime::UnityEngine.Perception.GroundTruth.LabelManagement.SemanticSegmentationLabelConfig
   m_LabelEntries:
-  - label: ball
+  - label: ball (1)
     color: {r: 0, g: 0, b: 1, a: 1}
-  - label: goalpost
+  - label: ball (2)
+    color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  - label: ball (3)
+    color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  - label: ball (4)
     color: {r: 0, g: 1, b: 0, a: 1}
-  - label: obstacle
+  - label: ball (5)
     color: {r: 1, g: 0, b: 0, a: 1}
-  - label: robot
+  - label: ball (6)
     color: {r: 1, g: 1, b: 1, a: 1}
+  - label: ball (7)
+    color: {r: 0.15302122, g: 0.799531, b: 1, a: 1}
+  - label: goalpost (1)
+    color: {r: 1, g: 0.049765825, b: 0.1794899, a: 1}
+  - label: goalpost (2)
+    color: {r: 0.98462236, g: 0.22552264, b: 1, a: 1}
+  - label: goalpost (3)
+    color: {r: 1, g: 0.49888772, b: 0.34982342, a: 1}
+  - label: goalpost (4)
+    color: {r: 1, g: 0.8937439, b: 0.025167465, a: 1}
+  - label: nao (1)
+    color: {r: 1, g: 0.4409979, b: 0.9785766, a: 1}
+  - label: nao (2)
+    color: {r: 0.5248506, g: 1, b: 0.25855613, a: 1}
+  - label: nao (3)
+    color: {r: 0.95423394, g: 0.33389997, b: 1, a: 1}
+  - label: nao (4)
+    color: {r: 1, g: 0.18358755, b: 0.5744678, a: 1}
+  - label: nao (5)
+    color: {r: 0.077991426, g: 0.82612056, b: 1, a: 1}
+  - label: nao (6)
+    color: {r: 0.9714589, g: 0.37100607, b: 1, a: 1}
+  - label: nao (7)
+    color: {r: 0.6910166, g: 0.33117145, b: 1, a: 1}
+  - label: nao (8)
+    color: {r: 0.042551756, g: 1, b: 0.6226562, a: 1}
+  - label: nao (9)
+    color: {r: 0.44572142, g: 0.14143658, b: 1, a: 1}
+  - label: T1 (1)
+    color: {r: 0.76474833, g: 0.44865608, b: 1, a: 1}
+  - label: T1 (2)
+    color: {r: 0.9236022, g: 1, b: 0.08571756, a: 1}
+  - label: T1 (3)
+    color: {r: 0.20176196, g: 1, b: 0.79679674, a: 1}
+  - label: T1 (4)
+    color: {r: 0.47689718, g: 1, b: 0.61002356, a: 1}
+  - label: T1 (5)
+    color: {r: 0.9869824, g: 1, b: 0.29091775, a: 1}
+  - label: T1 (6)
+    color: {r: 0.12688613, g: 0.8012022, b: 1, a: 1}
+  - label: obstacle (1)
+    color: {r: 0.83581764, g: 0.22294688, b: 1, a: 1}
+  - label: obstacle (2)
+    color: {r: 1, g: 0.14897037, b: 0.48540667, a: 1}
+  - label: T-Intersection (1)
+    color: {r: 1, g: 0.19479775, b: 0.29689437, a: 1}
+  - label: T-Intersection (2)
+    color: {r: 0.46209812, g: 0.73112524, b: 1, a: 1}
+  - label: T-Intersection (3)
+    color: {r: 0.32511944, g: 1, b: 0.65061516, a: 1}
+  - label: T-Intersection (4)
+    color: {r: 0.6206155, g: 0.42368174, b: 1, a: 1}
+  - label: T-Intersection (5)
+    color: {r: 0.26469767, g: 1, b: 0.5913334, a: 1}
+  - label: T-Intersection (6)
+    color: {r: 0.3256665, g: 1, b: 0.6646638, a: 1}
+  - label: L-Intersection (1)
+    color: {r: 0.7119904, g: 0.2535156, b: 1, a: 1}
+  - label: L-Intersection (2)
+    color: {r: 0.030026913, g: 0.23101649, b: 1, a: 1}
+  - label: L-Intersection (3)
+    color: {r: 1, g: 0.44855088, b: 0.77869374, a: 1}
+  - label: L-Intersection (4)
+    color: {r: 1, g: 0.22104764, b: 0.30568653, a: 1}
+  - label: X-Intersection (1)
+    color: {r: 0.9808741, g: 1, b: 0.053246558, a: 1}
+  - label: X-Intersection (2)
+    color: {r: 0.01649779, g: 0.6812357, b: 1, a: 1}
+  - label: T1 (7)
+    color: {r: 1, g: 0.98496675, b: 0.09744221, a: 1}
+  - label: T1 (8)
+    color: {r: 0.16874099, g: 1, b: 0.84171987, a: 1}
   skyColor: {r: 0, g: 0, b: 0, a: 1}
