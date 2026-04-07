@@ -149,11 +149,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8971562872065922236, guid: 1bd9b7af14455475eac188584bb073d0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.483
+      value: 0.52
       objectReference: {fileID: 0}
     - target: {fileID: 8971562872065922236, guid: 1bd9b7af14455475eac188584bb073d0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.684
+      value: 0.72
       objectReference: {fileID: 0}
     - target: {fileID: 8971562872065922236, guid: 1bd9b7af14455475eac188584bb073d0, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1773,7 +1773,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8971562872065922236, guid: 1bd9b7af14455475eac188584bb073d0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.505
+      value: 0.52
       objectReference: {fileID: 0}
     - target: {fileID: 8971562872065922236, guid: 1bd9b7af14455475eac188584bb073d0, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2848,7 +2848,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1042683414601846920, guid: bdb3e9f5cffa04e01953dfd58c4dd77b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.488
+      value: 0.502
       objectReference: {fileID: 0}
     - target: {fileID: 1042683414601846920, guid: bdb3e9f5cffa04e01953dfd58c4dd77b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4453,10 +4453,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 343534287122684515, guid: 7ecf5e3c06cc147fc9e91e2dba9378de, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 0dce1ef5bd61f47afab6cdcf1cc6e669, type: 2}
     - target: {fileID: 2579990163068071099, guid: 7ecf5e3c06cc147fc9e91e2dba9378de, type: 3}
       propertyPath: m_Name
       value: L-Intersection (1)
@@ -4479,7 +4475,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7185202003201529259, guid: 7ecf5e3c06cc147fc9e91e2dba9378de, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.496
+      value: 0.503
       objectReference: {fileID: 0}
     - target: {fileID: 7185202003201529259, guid: 7ecf5e3c06cc147fc9e91e2dba9378de, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5225,10 +5221,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 343534287122684515, guid: 7ecf5e3c06cc147fc9e91e2dba9378de, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 0dce1ef5bd61f47afab6cdcf1cc6e669, type: 2}
     - target: {fileID: 2579990163068071099, guid: 7ecf5e3c06cc147fc9e91e2dba9378de, type: 3}
       propertyPath: m_Name
       value: L-Intersection (2)
@@ -5251,11 +5243,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7185202003201529259, guid: 7ecf5e3c06cc147fc9e91e2dba9378de, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.49
+      value: 0.507
       objectReference: {fileID: 0}
     - target: {fileID: 7185202003201529259, guid: 7ecf5e3c06cc147fc9e91e2dba9378de, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.756
+      value: 0.7669997
       objectReference: {fileID: 0}
     - target: {fileID: 7185202003201529259, guid: 7ecf5e3c06cc147fc9e91e2dba9378de, type: 3}
       propertyPath: m_LocalRotation.w
@@ -6951,7 +6943,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8971562872065922236, guid: 1bd9b7af14455475eac188584bb073d0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.486
+      value: 0.511
       objectReference: {fileID: 0}
     - target: {fileID: 8971562872065922236, guid: 1bd9b7af14455475eac188584bb073d0, type: 3}
       propertyPath: m_LocalPosition.z
@@ -8181,7 +8173,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8971562872065922236, guid: 1bd9b7af14455475eac188584bb073d0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.498
+      value: 0.52
       objectReference: {fileID: 0}
     - target: {fileID: 8971562872065922236, guid: 1bd9b7af14455475eac188584bb073d0, type: 3}
       propertyPath: m_LocalPosition.z
@@ -8249,7 +8241,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1042683414601846920, guid: bdb3e9f5cffa04e01953dfd58c4dd77b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.496
+      value: 0.508
       objectReference: {fileID: 0}
     - target: {fileID: 1042683414601846920, guid: bdb3e9f5cffa04e01953dfd58c4dd77b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -8647,10 +8639,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 343534287122684515, guid: 7ecf5e3c06cc147fc9e91e2dba9378de, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 0dce1ef5bd61f47afab6cdcf1cc6e669, type: 2}
     - target: {fileID: 2579990163068071099, guid: 7ecf5e3c06cc147fc9e91e2dba9378de, type: 3}
       propertyPath: m_Name
       value: L-Intersection (3)
@@ -8673,7 +8661,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7185202003201529259, guid: 7ecf5e3c06cc147fc9e91e2dba9378de, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.493
+      value: 0.504
       objectReference: {fileID: 0}
     - target: {fileID: 7185202003201529259, guid: 7ecf5e3c06cc147fc9e91e2dba9378de, type: 3}
       propertyPath: m_LocalPosition.z
@@ -9098,7 +9086,7 @@ MonoBehaviour:
   m_ScaleMode: 0
   m_Offset: {x: 5.8085103, y: 3.95, z: 0}
   m_Size: {x: 14, y: 9.9, z: 68}
-  m_FadeFactor: 0.39
+  m_FadeFactor: 1
   m_Version: 3
 --- !u!4 &1299416247
 Transform:
@@ -9129,7 +9117,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.DecalProjector
   m_Material: {fileID: 2100000, guid: 6ffe81ce0829b4a29a4c546abfd22775, type: 2}
   m_DrawDistance: 1000
-  m_FadeScale: 0.357
+  m_FadeScale: 0.9
   m_StartAngleFade: 180
   m_EndAngleFade: 180
   m_UVScale: {x: 1, y: 1}
@@ -10442,11 +10430,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7185202003201529259, guid: 7ecf5e3c06cc147fc9e91e2dba9378de, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.497
+      value: 0.505
       objectReference: {fileID: 0}
     - target: {fileID: 7185202003201529259, guid: 7ecf5e3c06cc147fc9e91e2dba9378de, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.754
+      value: 0.77699995
       objectReference: {fileID: 0}
     - target: {fileID: 7185202003201529259, guid: 7ecf5e3c06cc147fc9e91e2dba9378de, type: 3}
       propertyPath: m_LocalRotation.w
@@ -11370,10 +11358,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: ' T-Intersection (3)'
       objectReference: {fileID: 0}
-    - target: {fileID: 4125583497722548405, guid: 1bd9b7af14455475eac188584bb073d0, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 0dce1ef5bd61f47afab6cdcf1cc6e669, type: 2}
     - target: {fileID: 8971562872065922236, guid: 1bd9b7af14455475eac188584bb073d0, type: 3}
       propertyPath: m_LocalScale.x
       value: 10
@@ -11392,11 +11376,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8971562872065922236, guid: 1bd9b7af14455475eac188584bb073d0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.495
+      value: 0.51
       objectReference: {fileID: 0}
     - target: {fileID: 8971562872065922236, guid: 1bd9b7af14455475eac188584bb073d0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.668
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 8971562872065922236, guid: 1bd9b7af14455475eac188584bb073d0, type: 3}
       propertyPath: m_LocalRotation.w
@@ -11762,7 +11746,7 @@ MonoBehaviour:
   constants:
     randomSeed: 539662031
     startIteration: 0
-    iterationCount: 50
+    iterationCount: 9000
     totalIterations: 100
     instanceCount: 1
     instanceIndex: 0

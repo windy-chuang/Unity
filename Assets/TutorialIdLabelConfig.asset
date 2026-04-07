@@ -13,25 +13,25 @@ MonoBehaviour:
   m_Name: TutorialIdLabelConfig
   m_EditorClassIdentifier: Unity.Perception.Runtime::UnityEngine.Perception.GroundTruth.LabelManagement.IdLabelConfig
   m_LabelEntries:
-  - label: ball
+  - label: L-Intersection
     id: 1
     hierarchyRelation: 0
-  - label: goalpost
+  - label: T-Intersection
     id: 2
     hierarchyRelation: 0
-  - label: obstacle
+  - label: X-Intersection
     id: 3
     hierarchyRelation: 0
-  - label: robot
+  - label: ball
     id: 4
     hierarchyRelation: 0
-  - label: L-Intersection
+  - label: goalpost
     id: 5
     hierarchyRelation: 0
-  - label: X-Intersection
+  - label: obstacle
     id: 6
     hierarchyRelation: 0
-  - label: T-Intersection
+  - label: robot
     id: 7
     hierarchyRelation: 0
   autoAssignIds: 1
