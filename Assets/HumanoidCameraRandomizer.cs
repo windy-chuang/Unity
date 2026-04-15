@@ -15,6 +15,7 @@ using UnityEngine.Perception.Randomization.Randomizers;
 /// </summary>
 [Serializable]
 [AddRandomizerMenu("NomadZ/Humanoid Camera Randomizer")]
+
 public class HumanoidCameraRandomizer : Randomizer
 {
     // -------------------------------------------------------------------------
@@ -23,7 +24,7 @@ public class HumanoidCameraRandomizer : Randomizer
 
     [Header("Robot Position on Field")]
     [Tooltip("Half-width of the RoboCup field (x-axis). Standard SPL field is 9m long, 6m wide.")]
-    public float fieldHalfWidth = 3.0f;
+    public float fieldWidth = 3.0f;
 
     [Tooltip("Half-length of the RoboCup field (z-axis).")]
     public float fieldHalfLength = 4.5f;
@@ -101,10 +102,20 @@ public class HumanoidCameraRandomizer : Randomizer
     // Position
     // -------------------------------------------------------------------------
 
+    float Gaussian(float mean, float stdDev)
+    {
+        float u1 = 1.0f - UnityEngine.Random.value; // (0,1]
+        float u2 = 1.0f - UnityEngine.Random.value;
+
+        float randStdNormal = Mathf.Sqrt(-2.0f * Mathf.Log(u1)) *
+                            Mathf.Sin(2.0f * Mathf.PI * u2);
+
+        return mean + stdDev * randStdNormal;
+    }
     private void RandomizePosition()
     {
-        float x = UnityEngine.Random.Range(-fieldHalfWidth, fieldHalfWidth);
-        float z = UnityEngine.Random.Range(-fieldHalfLength, fieldHalfLength);
+        float z = Gaussian(fieldWidth / 2f, fieldWidth / 6f);
+        float x = Gaussian(0f, fieldHalfLength / 3f);
         float y = UnityEngine.Random.Range(cameraHeightMin, cameraHeightMax);
         cameraTransform.position = new Vector3(x, y, z);
     }
@@ -120,8 +131,8 @@ public class HumanoidCameraRandomizer : Randomizer
 
         // Pitch: pick a mode in [pitchModeMin, pitchModeMax], then draw from
         // a Gaussian around it — views cluster near horizontal/downward
-        float pitchMode = UnityEngine.Random.Range(pitchModeMin, pitchModeMax);
-        float pitch = SampleGaussianClamped(pitchMode, pitchSigma, pitchMin, pitchMax);
+        
+        float pitch = UnityEngine.Random.Range(pitchModeMin, pitchModeMax);
 
         // Roll: small Gaussian wobble around 0
         float roll = SampleGaussianClamped(0f, rollSigma, -10f, 10f);
