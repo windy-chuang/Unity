@@ -4,64 +4,53 @@ using UnityEngine.Perception.Randomization.Randomizers;
 
 [Serializable]
 [AddRandomizerMenu("NomadZ/Other Side Randomizer")]
-public class OtherSideRandomizer: Randomizer
+public class OtherSideRandomizer : Randomizer
 {
-    [Header("Field Dimensions")]
-    public float zstart = -8.0f;       
-    public float zend = -1.0f;
-    public float xstart = -13.0f;   
-    public float xend = 0.0f;
+    [Header("Field Center (mean)")]
+    public float centerX = 0f;
+    public float centerZ = 3.5f;
 
-    [Header("Roll")]
+    [Header("Spread (sigma)")]
+    public float sigmaX = 2f;
+    public float sigmaZ = 2f;
+
+    [Header("Field Bounds (clamp)")]
+    public float xstart = -6.0f;
+    public float xend = 6.0f;
+    public float zstart = 0f;
+    public float zend = 7f;
+
+    [Header("Roll (degrees)")]
+    public float rollMean = 0f;
     public float rollSigma = 5f;
 
     protected override void OnIterationStart()
     {
-        var tags = tagManager.Query<FieldObjectRandomizerTag>();
-
+        var tags = tagManager.Query<OtherSideRandomizerTag>();
         foreach (var tag in tags)
         {
             var obj = tag.transform;
 
-            // -------------------------
-            // Position (Gaussian)
-            // -------------------------
+            // X and Z sampled independently (iid)
             float x = UnityEngine.Random.Range(xstart, xend);
-            float z = UnityEngine.Random.Range(zstart, zend);
+            float z = Mathf.Clamp(SampleGaussian(centerZ, sigmaZ), zstart, zend);
+            float y = obj.localPosition.y;
 
-            float y = obj.position.y; // keep ground height
+            obj.localPosition = new Vector3(x, y, z);
 
-            obj.position = new Vector3(x, y, z);
+            // Rotate around world Y axis regardless of object's local axis orientation
+            // float roll = SampleGaussian(rollMean, rollSigma);
+            // obj.rotation = Quaternion.AngleAxis(roll, Vector3.up);
 
-            // -------------------------
-            // Roll only (Z axis)
-            // -------------------------
-            float roll = SampleGaussianClamped(0f, rollSigma, -15f, 15f);
-
-            Vector3 euler = obj.eulerAngles;
-            obj.rotation = Quaternion.Euler(euler.x, euler.y, roll);
+            Debug.Log($"{obj.name} spawned at world pos {obj.position}, local pos {obj.localPosition}");
         }
     }
 
-    // -------------------------
-    // Gaussian helpers
-    // -------------------------
-
-    float Gaussian(float mean, float stdDev)
+    private float SampleGaussian(float mean, float sigma)
     {
         float u1 = 1f - UnityEngine.Random.value;
         float u2 = 1f - UnityEngine.Random.value;
-
-        float randStdNormal =
-            Mathf.Sqrt(-2f * Mathf.Log(u1)) *
-            Mathf.Cos(2f * Mathf.PI * u2);
-
-        return mean + stdDev * randStdNormal;
-    }
-
-    float SampleGaussianClamped(float mean, float sigma, float min, float max)
-    {
-        float sample = mean + sigma * Gaussian(0f, 1f);
-        return Mathf.Clamp(sample, min, max);
+        float z = Mathf.Sqrt(-2f * Mathf.Log(u1)) * Mathf.Sin(2f * Mathf.PI * u2);
+        return mean + sigma * z;
     }
 }

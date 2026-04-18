@@ -3,8 +3,8 @@ using UnityEngine;
 using UnityEngine.Perception.Randomization.Randomizers;
 
 [Serializable]
-[AddRandomizerMenu("NomadZ/Field Object Randomizer")]
-public class FieldObjectRandomizer : Randomizer
+[AddRandomizerMenu("NomadZ/Banner Randomizer")]
+public class BannerRandomizer : Randomizer
 {
     [Header("Field Dimensions")]
     public float xstart = -6.0f;        
@@ -17,7 +17,7 @@ public class FieldObjectRandomizer : Randomizer
 
     protected override void OnIterationStart()
     {
-        var tags = tagManager.Query<FieldObjectRandomizerTag>();
+        var tags = tagManager.Query<BannerRandomizerTag>();
 
         foreach (var tag in tags)
         {
@@ -30,18 +30,13 @@ public class FieldObjectRandomizer : Randomizer
             // Keep inside field
             float x = UnityEngine.Random.Range(xstart, xend);
             float z = UnityEngine.Random.Range(zstart, zend);
-
-            float y = obj.localPosition.y; // keep ground height
-
+            float y = obj.localPosition.y;
             obj.localPosition = new Vector3(x, y, z);
 
-            // -------------------------
-            // Roll only (Z axis)
-            // -------------------------
-            float roll = UnityEngine.Random.Range(0, 7);
+            float roll = UnityEngine.Random.Range(0, 360);
+            Vector3 euler = obj.localEulerAngles;
+            obj.localRotation = Quaternion.Euler(euler.x, euler.y, roll);
 
-            Vector3 euler = obj.eulerAngles;
-            obj.rotation = Quaternion.Euler(euler.x, euler.y, roll);
             Debug.Log($"{obj.name} spawned at world pos {obj.position}, local pos {obj.localPosition}");
         }
     }

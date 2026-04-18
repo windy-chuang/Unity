@@ -3,8 +3,8 @@ using UnityEngine;
 using UnityEngine.Perception.Randomization.Randomizers;
 
 [Serializable]
-[AddRandomizerMenu("NomadZ/Field Object Randomizer")]
-public class FieldObjectRandomizer : Randomizer
+[AddRandomizerMenu("NomadZ/Info Board Randomizer")]
+public class InfoBoardRandomizer : Randomizer
 {
     [Header("Field Dimensions")]
     public float xstart = -6.0f;        
@@ -17,7 +17,7 @@ public class FieldObjectRandomizer : Randomizer
 
     protected override void OnIterationStart()
     {
-        var tags = tagManager.Query<FieldObjectRandomizerTag>();
+        var tags = tagManager.Query<InfoBoardRandomizerTag>();
 
         foreach (var tag in tags)
         {
